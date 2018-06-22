@@ -1,0 +1,59 @@
+namespace Lambda_Expressions
+{
+    /*
+    syntax:
+            (input parameters) => expression
+            or
+            (input parameters) =>
+            {
+                expressions
+            }
+
+            if the lambda has a single parameter, you don't have to
+            put the parameter inside the parenthesis
+            Example
+            x => x>0;
+
+            if the lambda expression is a single statement, you don't
+            add the return statement
+
+            x => x>0; is a lambda expression that takes a variable
+            and returns true if x is positive.
+            Notice that in most cases you don't need to specify the
+            type of parameters
+    */
+    public delegate double MyDoubleDelegate(double x, double y);
+    //define a delegate type that takes 2 ints and return a bool
+    public delegate bool MyBoolDelegate(double x, double y);
+    public partial class Form1 : Form
+    {
+        //Declare delegate objects of type MyDoubleDelegate
+        MyDoubleDelegate d1, d2;
+        //Declare delegate objects of type MyBoolDelegate
+        MyBoolDelegate d3, d4;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+            //create d1 to reference a lambda expression that return
+            //the sum of both input parameters
+            d1 = (a, b) => a + b;
+
+            //create d2 to reference a lambda expression that return
+            //the power of both input parameters
+            d2 = (a, b) => Math.Pow(a, b);
+
+            //create d3 to reference a lambda expression that returns
+            //true if both parameters are odd
+            d3 = (a, b) => a % 2 != 0 && b % 2 != 0;
+            //create d4 to lambda expression that returns true if
+            //first param is odd, second param is even or first
+            //param is at least have the second one.
+            d4 = (a, b) => a % 2 != 0 && b % 2 == 0 || a >= b / 2;
+        }
+    }
+}
