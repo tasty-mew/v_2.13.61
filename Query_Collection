@@ -1,0 +1,90 @@
+ public partial class Form1 : Form
+    {
+        /*
+         .Net defines a class Enumerable in the System.Linq library
+         this class defines a list of methods to allow you to search or 
+         query a collection. Even though these methods are defined in a 
+         separate class, they are defined as extension methods, which 
+         means they can be used by a List as if the method belongs to it
+         */
+        Random rand = new Random();
+        List<int> intList = new List<int>();
+        List<Box> boxList = new List<Box>();
+
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeIntList();
+            InitializeBoxList();
+        }
+        //method to initialize list with random values
+        private void InitializeIntList()
+        {
+            for (int i = 1; i <= 100; i++)
+                intList.Add(rand.Next(-99, 100));
+        }
+        private void InitializeBoxList()
+        {
+            for(int i=1; i<= 100; i++)
+            {
+                double length = rand.Next(12, 50);
+                double width = rand.Next(5, (int)length);
+                double height = rand.Next(4, 24);
+
+                Box box = new Box { L = length, W = width, H = height };
+                boxList.Add(box);
+            }
+        }
+        private void Display<T>(List<T> list,ListBox listbox)
+        {
+            listbox.Items.Clear();
+            foreach (T x in list)
+                listbox.Items.Add(x);
+        }
+
+        private void btnFillAllPosOdds_Click(object sender, EventArgs e)
+        {
+            /*
+             * use .Net FindAll method
+             * 
+             * public List<T> FindAll(Predicate<T> match)
+             */
+            //fill all positive odds
+            //define a lambda expression, that takes a value and returns
+            //true when the value is odd and positive
+            Predicate<int> predicate = x => x > 0 && x % 2 != 0;
+            List<int> posOdds = intList.FindAll(predicate);
+            Display(posOdds, listBox1);
+        }
+        //=====================Boxes=======================
+        private void btnBoxesLenghOverAvgLength_Click(object sender, EventArgs e)
+        {
+            //get the average length
+            /*
+            public static double Average<TSource>(
+    this IEnumerable<TSource> source,
+    Func<TSource, double> selector
+)
+*/
+            //Need to create a Func<TSource,double> delegate
+            //TSource is Box (that is the input parameter0
+            //double is the return type
+            //(pass a box to it, it returns its length (L)
+            Func<Box, double> function = box => box.L;
+            //the average method averages anything thsi function
+            //returns
+            double avgLength = boxList.Average(function);
+
+            //now use the FindAll method to return all the boxes
+            //with longer length
+            Predicate<Box> predicate = box => box.L > avgLength;
+            //findall returns all the boxes that satify the 
+            //condition set by the predicate
+            List<Box> boxes = boxList.FindAll(predicate);
+            Display(boxes, listBox2);
+            //display average length
+            listBox2.Items.Add("");
+            listBox2.Items.Add("avg length: " + avgLength);
+        }
+    }
+}
