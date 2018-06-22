@@ -1,0 +1,86 @@
+namespace Delegates_as_parameters
+{
+    /*
+    Delegates as parameters means that you can pass a delegate object
+    to a method.
+    Since a delegate object is just a reference to a method, you are
+    actually passing a metod to a metod
+
+    indirectly you are using methods as parameter of other methods
+    
+        will show an example of a method that is passed a delegate
+        will simulate a .Net method FindAll
+        */
+
+    //define a delegate type that takes an int and returns a bool
+    public delegate bool MyPredicate(int x);
+    public partial class Form1 : Form
+    {
+        Random rand = new Random();
+        List<int> list = new List<int>();
+        public Form1()
+        {
+            InitializeComponent();
+            InitializeList();
+            Display(list,listBox1);
+        }
+        //helper methods
+        private void InitializeList()
+        {
+            for(int i=0; i < 100; i++)
+            {
+                list.Add(rand.Next(-199, 200));
+            }
+        }
+
+        //display to a listbox
+        private void Display(List<int> list, ListBox listbox)
+        {
+            listbox.Items.Clear();
+            foreach (int x in list)
+                listbox.Items.Add(x);
+        }
+        private void btnFindAllEvens_Click(object sender, EventArgs e)
+        {
+            //create a delegate object of type MyPredicate
+            MyPredicate predicate = new MyPredicate(IsEven);
+
+            List<int> evenList = FindAll(predicate);
+            Display(evenList, listBox2);
+        }
+        private void btnFindOdds_Click(object sender, EventArgs e)
+        {
+            //create a delegate (MyPredicate) object and reference it
+            //to either a method (IsOdd) or a lambda expression
+            MyPredicate predicate = x => x % 2 != 0;
+            List<int> oddList = FindAll(predicate);
+            Display(oddList, listBox2);
+        }
+        //method FindAll that sequences thru the main list and returns
+        //a list of even elements only (from the list)
+        private List<int> FindAll(MyPredicate predicate)
+        {
+            //create a list that will hold all the even elements in
+            //the main list
+            List<int> resultList = new List<int>();
+            //sequence through the main list
+            foreach(int x in list)
+            {
+                //check x if even
+               // if (x % 2 == 0)
+               if(predicate(x))
+                    //      add to resultList
+                    resultList.Add(x);
+
+            }
+            return resultList;
+        }
+
+        private bool IsEven(int x)
+        {
+            return x % 2 == 0;
+        }
+
+       
+    }
+}
