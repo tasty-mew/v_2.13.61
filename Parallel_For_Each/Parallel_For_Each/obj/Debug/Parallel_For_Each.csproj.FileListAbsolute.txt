@@ -1,6 +1,0 @@
-C:\Users\zorak\Documents\Visual Studio 2015\Parallel_For_Each\Parallel_For_Each\bin\Debug\Parallel_For_Each.exe.config
-C:\Users\zorak\Documents\Visual Studio 2015\Parallel_For_Each\Parallel_For_Each\bin\Debug\Parallel_For_Each.exe
-C:\Users\zorak\Documents\Visual Studio 2015\Parallel_For_Each\Parallel_For_Each\bin\Debug\Parallel_For_Each.pdb
-C:\Users\zorak\Documents\Visual Studio 2015\Parallel_For_Each\Parallel_For_Each\obj\Debug\Parallel_For_Each.csprojResolveAssemblyReference.cache
-C:\Users\zorak\Documents\Visual Studio 2015\Parallel_For_Each\Parallel_For_Each\obj\Debug\Parallel_For_Each.exe
-C:\Users\zorak\Documents\Visual Studio 2015\Parallel_For_Each\Parallel_For_Each\obj\Debug\Parallel_For_Each.pdb
