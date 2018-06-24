@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="stlye/style.css" />
+    <style>
+    body
+ {
+            color: #666666;
+            background-color: #f9f8f6;
+           
+            background-image: url('photos/download (1).jpg');
+            background-position: center;
+            margin: 0px;
+        }
+    p{
+            
+            font-family:Arial;
+            color:lightgray;
+            font-size:large;
+            text-align:center;
+        }
+        li {
+            font-size: x-large;
+            color: white;
+            font-family: Arial;
+        }
+
+        figcaption {
+            font-size: x-large;
+            color: white;
+            font-family: Arial;
+            background-color: blue;
+        }
+
+        footer {
+            text-align: center;
+            font-family: Arial;
+            font-size: medium;
+            color: lightgray;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        text{
+            align-items:center;
+            font-family:Arial;
+            font-size:large;
+            color:white;
+        }
+       
+        
+        article{
+            color:white;
+            font-family:Arial;
+            font-size:large;
+            align-content:center;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id-"reservations">
+        <header>
+            <h1>Beachfront Conomininums</h1>
+            <h2><i>Where luxury meets the beach</i></h2>
+        </header>
+        <nav id="main-menu">
+            <ul>
+                <li><a href="" class="index">Landing</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="options.html">Places</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                    
+            </ul>
+            <div class="clear"></div>
+        </nav>
+        <article>
+            <figure>
+                <figcaption>Make a Reservation</figcaption>
+            </figure>
+            
+                First name: <input type="text" name="fname"><br/><br />
+
+                Last name: <input type="text" name="lname"><br/><br />
+
+                Number of Rooms: 1 Room,<input type="radio" name="1 Room" />
+                2 Rooms,<input type="radio" name="2 Rooms" />
+                3 Rooms<input type="radio" name="3 Rooms" /><br />
+               <br />
+                Style:  <select id="Select1">
+                <option value="Platform House">Platform House</option>
+                <option value="Secluded Abode">Secluded Abode</option>
+                <option value="Desert Island">Desert Island</option>
+                </select><br /><br /><br />
+                &nbsp;&nbsp; &nbsp;&nbsp;Additional Information:<br />
+                &nbsp;&nbsp; &nbsp;&nbsp;<textarea id="TextArea1" rows="2" cols="20"></textarea><br /><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<button onclick="myFunction()">Complete Reservation</button>
+                <script>
+                function myFunction() {
+                        alert("You're Reservation Has Been Made!");
+                            }
+                </script>
+                </article>
+
+
+
+        <footer>
+            &copy; 2017 CNye Travel inc.
+        </footer>
+    </div>
+</body>
+</html>
