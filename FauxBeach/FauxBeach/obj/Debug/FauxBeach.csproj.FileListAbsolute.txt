@@ -1,5 +1,0 @@
-C:\Users\zorak\Documents\Visual Studio 2015\FauxBeach\FauxBeach\bin\Debug\FauxBeach.dll
-C:\Users\zorak\Documents\Visual Studio 2015\FauxBeach\FauxBeach\bin\Debug\FauxBeach.pdb
-C:\Users\zorak\Documents\Visual Studio 2015\FauxBeach\FauxBeach\obj\Debug\FauxBeach.csprojResolveAssemblyReference.cache
-C:\Users\zorak\Documents\Visual Studio 2015\FauxBeach\FauxBeach\obj\Debug\FauxBeach.dll
-C:\Users\zorak\Documents\Visual Studio 2015\FauxBeach\FauxBeach\obj\Debug\FauxBeach.pdb
